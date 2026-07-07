@@ -1,0 +1,121 @@
+// Zed settings.json — 配置先: ~/.config/zed/settings.json
+// Zed の設定ファイルはコメント付き JSON (JSONC) を許容します
+{
+  // ── 要求事項 ──────────────────────────────
+
+  // Vim キーバインド
+  "cli_default_open_behavior": "existing_window",
+  "edit_predictions": {
+    "provider": "none",
+  },
+  "vim_mode": true,
+  "vim": {
+    "use_system_clipboard": "always", // y/p を OS クリップボードと共有
+    "toggle_relative_line_numbers": true, // 挿入モード中は絶対行番号に切替
+  },
+
+  // 相対行番号(Vim の 5j / 10k 移動が数えやすい)
+  "relative_line_numbers": "enabled",
+
+  // テーマ: システム設定に追従、高コントラストの Gruvbox Hard 系
+  "theme": {
+    "mode": "system",
+    "light": "Gruvbox Light Hard",
+    "dark": "Gruvbox Dark Hard",
+  },
+
+  // ── 以下は任せると言われた部分(理由をコメントで明示)──
+
+  // フォント: 好みに置換可。Zed 同梱の Zed Plex Mono は無難
+  "buffer_font_family": ".ZedMono",
+  "buffer_font_size": 14,
+  "buffer_line_height": "comfortable",
+
+  // カーソル点滅オフ: Vim 使いはブロックカーソルの視認が安定する方が楽
+  "cursor_blink": false,
+
+  // 保存時フォーマット: LSP のフォーマッタに委譲
+  "format_on_save": "on",
+  "ensure_final_newline_on_save": true,
+  "remove_trailing_whitespace_on_save": true,
+
+  // 自動保存: フォーカスが外れたら保存(エージェントがファイルを読む前提だと齟齬が減る)
+  "autosave": "on_focus_change",
+
+  // インレイヒント: 型情報をエディタ上で確認(レビュー用途に有効)
+  "inlay_hints": {
+    "enabled": true,
+  },
+
+  // Git 差分をガターに表示(Claude Code の変更をエディタ側で追いやすい)
+  "git": {
+    "inline_blame": {
+      "enabled": false, // インライン blame はノイズになりがちなのでオフ
+    },
+  },
+
+  // スクロールバーに診断・検索結果・Git 変更をマーキング
+  "scrollbar": {
+    "show": "auto",
+    "diagnostics": "all",
+    "git_diff": true,
+    "search_results": true,
+  },
+
+  // ミニマップは非表示(相対行番号 + Vim 移動なら不要、描画も減る)
+  "minimap": {
+    "show": "never",
+  },
+
+  // インデントガイド
+  "indent_guides": {
+    "enabled": true,
+  },
+
+  // 折返しなし: コードは横スクロール派が多いが、好みで "editor_width" 等に変更可
+  "soft_wrap": "none",
+
+  // ターミナル: Claude Code をここで常駐させる想定
+  "terminal": {
+    "copy_on_select": true,
+    "dock": "right",
+  },
+
+  // Zed 内蔵 AI 機能はオフ(Claude Code に一本化する前提)
+  "agent": {
+    "enabled": false,
+  },
+
+  // テレメトリは好みで。最小送信にしておく
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+  },
+
+  "auto_install_extensions": {
+    "html": true,
+    "toml": true,
+    "dockerfile": true,
+    "docker-compose": true,
+    "sql": true,
+    "env": true,
+    "git-firefly": true,
+    "csharp": true,
+    "ruby": true,
+    "zig": true,
+  },
+
+  "languages": {
+    "Ruby": {
+      "language_servers": ["ruby-lsp"],
+    },
+  },
+
+  "lsp": {
+    "ruby-lsp": {
+      "settings": {
+        "use_bundler": false,
+      },
+    },
+  },
+}
