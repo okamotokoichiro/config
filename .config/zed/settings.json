@@ -103,6 +103,7 @@
     "csharp": true,
     "ruby": true,
     "zig": true,
+    "odin": true,
   },
 
   "languages": {
