@@ -83,3 +83,5 @@ cask "rectangle"
 cask "spotify"
 # Multiplayer code editor
 cask "zed"
+# Set of tools to manage resources and applications hosted on Google Cloud
+brew "gcloud-cli"
