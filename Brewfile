@@ -85,3 +85,5 @@ cask "spotify"
 cask "zed"
 # Set of tools to manage resources and applications hosted on Google Cloud
 brew "gcloud-cli"
+# Neon CLI tool
+brew "neonctl"
